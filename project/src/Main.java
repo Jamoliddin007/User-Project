@@ -28,7 +28,20 @@ public class Main {
                     }
                 }
                 case 2 -> {
-
+                    System.out.println("Enter your username: ");
+                    String username = scStr.nextLine();
+                    System.out.println("Enter your password: ");
+                    String password = scStr.nextLine();
+                    if (users.containsKey(username)) {
+                        if(users.get(username).getPassword().equals(password)) {
+                            System.out.println("Successfully logged in.");
+                        } else {
+                            System.out.println("Incorrect password.");
+                        }
+                        System.out.println("User already exists.");
+                    } else {
+                        System.out.println("User not found.");
+                    }
                 }
             }
         }
@@ -38,20 +51,8 @@ public class Main {
         private String username;
         private String password;
 
-        public String getUsername() {
-            return username;
-        }
-
-        public void setUsername(String username) {
-            this.username = username;
-        }
-
         public String getPassword() {
             return password;
-        }
-
-        public void setPassword(String password) {
-            this.password = password;
         }
 
         public User(String username, String password) {
