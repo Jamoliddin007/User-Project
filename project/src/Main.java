@@ -10,7 +10,7 @@ public class Main {
 
         int stepCode = 10;
         while (stepCode != 0) {
-            System.out.println("1. Regfister, 2. Login");
+            System.out.println("1. Register, 2. Login");
             stepCode = scNum.nextInt();
 
             switch (stepCode) {
@@ -34,11 +34,10 @@ public class Main {
                     String password = scStr.nextLine();
                     if (users.containsKey(username)) {
                         if(users.get(username).getPassword().equals(password)) {
-                            System.out.println("Successfully logged in.");
+                            System.out.println("Logged in successfully.");
                         } else {
-                            System.out.println("Incorrect password.");
+                            System.out.println("Wrong password.");
                         }
-                        System.out.println("User already exists.");
                     } else {
                         System.out.println("User not found.");
                     }
